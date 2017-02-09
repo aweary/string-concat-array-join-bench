@@ -8,12 +8,12 @@ var suite = new Benchmark.Suite;
 
 
 suite.add('Array.push + Array.join', () => {
-  const parsed = renderAttributesWithArray(styles);
-  const rendered = `<div ${parsed}></div>`
+  var parsed = renderAttributesWithArray(styles);
+  var rendered = `<div ${parsed}></div>`
 })
 .add('String concat', () => {
-  const parsed = renderAttributesWithString(styles);
-  const rendered = `<div ${parsed}></div>`
+  var parsed = renderAttributesWithString(styles);
+  var rendered = `<div ${parsed}></div>`
 })
 .on('cycle', (event) => {
   console.log(String(event.target))

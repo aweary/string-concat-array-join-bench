@@ -1,12 +1,12 @@
-var {isFunction} = require('lodash/fp')
+var isFunction = require('lodash/fp').isFunction
 
 
 module.exports = function renderAttributesWithString (attrs) {
-  let attrString = '';
+  var attrString = '';
 
-  for (let attrKey in attrs) {
+  for (var attrKey in attrs) {
     if (attrs.hasOwnProperty(attrKey) && attrKey !== "children") {
-      let attrVal = attrs[attrKey];
+      var attrVal = attrs[attrKey];
 
       if (!attrVal || isFunction(attrVal)) { continue; }
 
