@@ -1,7 +1,35 @@
 var isFunction = require('lodash/fp').isFunction
 
 
-module.exports = function renderAttributesWithString (attrs) {
+function renderAttributesWithString (attrs) {
+  var attrString = '';
+
+  for (var attrKey in attrs) {
+    if (attrs.hasOwnProperty(attrKey) && attrKey !== "children") {
+      var attrVal = attrs[attrKey];
+
+      if (!attrVal || isFunction(attrVal)) { continue; }
+
+      attrString += ' ';
+      attrString += attrKey;
+
+      if (attrVal === true) {
+        // nothing
+      } else if (attrKey === "style" && typeof attrVal === "object") {
+        attrString += '="'
+        attrString += styleObjToString(attrVal);
+        attrString += '"';
+      } else {
+        attrString += '="'
+        attrString += attrVal;
+        attrString += '"';
+      }
+    }
+  }
+  return attrString;
+}
+
+function renderAttributesWithTemplateString (attrs) {
   var attrString = '';
 
   for (var attrKey in attrs) {
@@ -22,4 +50,9 @@ module.exports = function renderAttributesWithString (attrs) {
     }
   }
   return attrString;
+}
+
+module.exports = {
+  renderAttributesWithString,
+  renderAttributesWithTemplateString,
 }

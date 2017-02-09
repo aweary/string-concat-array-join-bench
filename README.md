@@ -10,31 +10,35 @@ npm run bench
 #### node `v7.5.0`
 
 ```
-Array.push + Array.join x 609,326 ops/sec ±1.38% (88 runs sampled)
-String concat x 1,090,574 ops/sec ±0.96% (90 runs sampled)
+Array.push + Array.join x 547,371 ops/sec ±1.94% (82 runs sampled)
+String concat x 1,283,146 ops/sec ±1.48% (86 runs sampled)
+Template string concat x 984,701 ops/sec ±1.51% (87 runs sampled)
 Fastest is String concat
 ```
 
 #### node `v6.9.0`
 
 ```
-Array.push + Array.join x 662,817 ops/sec ±0.81% (87 runs sampled)
-String concat x 1,125,950 ops/sec ±1.64% (87 runs sampled)
+Array.push + Array.join x 553,434 ops/sec ±5.07% (79 runs sampled)
+String concat x 1,320,344 ops/sec ±3.63% (76 runs sampled)
+Template string concat x 1,013,330 ops/sec ±2.93% (83 runs sampled)
 Fastest is String concat
 ```
 
 ### node `v5.12.0`
 
 ```
-Array.push + Array.join x 208,051 ops/sec ±2.71% (87 runs sampled)
-String concat x 381,318 ops/sec ±3.49% (84 runs sampled)
+Array.push + Array.join x 143,848 ops/sec ±21.42% (61 runs sampled)
+String concat x 588,972 ops/sec ±1.70% (85 runs sampled)
+Template string concat x 357,902 ops/sec ±2.56% (82 runs sampled)
 Fastest is String concat
 ```
 
 ### node `v4.6.1`
 
 ```
-Array.push + Array.join x 217,128 ops/sec ±1.94% (85 runs sampled)
-String concat x 381,829 ops/sec ±1.31% (84 runs sampled)
+Array.push + Array.join x 190,131 ops/sec ±6.63% (75 runs sampled)
+String concat x 576,294 ops/sec ±1.69% (85 runs sampled)
+Template string concat x 369,546 ops/sec ±1.62% (84 runs sampled)
 Fastest is String concat
 ```
